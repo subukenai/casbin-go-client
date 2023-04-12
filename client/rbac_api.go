@@ -55,7 +55,7 @@ func (e *Enforcer) GetImplicitRolesForUser(ctx context.Context, name string, dom
 func (e *Enforcer) GetUsersForRole(ctx context.Context, name string) ([]string, error) {
 	res, err := e.client.remoteClient.GetUsersForRole(ctx, &pb.UserRoleRequest{
 		EnforcerHandler: e.handler,
-		User:            name,
+		Role:            name,
 	})
 	if err != nil {
 		return nil, err
